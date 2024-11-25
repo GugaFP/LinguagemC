@@ -1,0 +1,31 @@
+10. Escreva um algoritmo em C que receba dois números inteiros do usuário e exiba o maior deles,
+a verificação do maior, deve ser feita dentro de uma função. Se os números forem iguais, exiba
+uma mensagem indicando que eles são iguais. Utilize uma função com a seguinte assinatura: void
+maiorNumero(int num1, int num2);
+// Guilherme Fellipe - Computação 02BN
+// Ex 10 - Função que exibe o maior número entre dois valores
+
+#include <stdio.h>
+void maiorNumero(int num1, int num2) {
+if (num1 > num2) {
+printf("Maior número: %d\n", num1);
+} else if (num2 > num1) {
+printf("Maior número: %d\n", num2);
+} else {
+printf("Os números são iguais: %d\n", num1);
+
+}
+}
+
+int main() {
+int num1, num2;
+// Solicita ao usuário dois números inteiros
+printf("Digite o primeiro número: ");
+scanf("%d", &num1);
+printf("Digite o segundo número: ");
+scanf("%d", &num2);
+
+// Chama a função para exibir o maior número ou se é igualdade
+maiorNumero(num1, num2);
+return 0;
+}

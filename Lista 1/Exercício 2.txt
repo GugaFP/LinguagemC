@@ -1,0 +1,45 @@
+Exercício 2: Criar uma matriz quadrada onde o usuário fornece o tamanho (n), e a matriz segue o padrão especificado onde os elementos abaixo da diagonal principal são preenchidos com números crescentes de 1 até o número da linha correspondente, e os elementos na diagonal principal são o próprio índice da linha mais um, enquanto os elementos acima da diagonal são zeros conforme na imagem: Exemplo simulando que
+o usuário digitou 5. //Exemplo de Saída.
+10000
+12000
+12300
+12340
+12345
+
+//Guilherme Fellipe 02BN CC
+
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    // Solicita o tamanho da matriz ao usuário
+    printf("Digite o tamanho da matriz quadrada (n): ");
+    scanf("%d", &n);
+
+    int matriz[n][n]; // Declaração da matriz
+
+    // Preenchendo a matriz com o padrão especificado
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (j < i) {
+                matriz[i][j] = j + 1; // Elementos abaixo da diagonal principal
+            } else if (j == i) {
+                matriz[i][j] = i + 1; // Elementos na diagonal principal
+            } else {
+                matriz[i][j] = 0; // Elementos acima da diagonal principal
+            }
+        }
+    }
+
+    // Imprimindo a matriz
+    printf("\nMatriz gerada:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d", matriz[i][j]); // Exibe os números sem espaços
+        }
+        printf("\n"); // Quebra de linha para próxima linha da matriz
+    }
+
+    return 0;
+}

@@ -1,0 +1,36 @@
+2. Analise o código de programa abaixo, execute em seu computador e comente cada linha,
+explicando o código.
+#include <stdio.h> // Inicia com três bibliotecas
+#include <string.h>
+#include <locale.h>
+typedef struct { // Define um tipo de estrutura chamado 'carro' usando uma struct
+char modelo [50]; // Armazena os tipos de dados de carro, ano e preço
+int ano;
+double preco;
+} Carro;
+
+void modificarPreco (Carro *c, double novoPreco) { // Função que serve para modificar o preço do carro
+c->preco = novoPreco;
+}
+void imprimirCarro (Carro *c) {
+// Função para exibir os dados do carro, e logo depois imprime com ‘printf’ o modelo, ano e preço
+printf("Modelo: %s\n", c->modelo);
+printf("Ano: %d\n", c->ano);
+printf("Preço: R$ %.21f\n", c->preco);
+}
+int main() { // Inicia o main e configura a localização para “português”
+setlocale (LC ALL, "portuguese"); // Cria uma variável do tipo/nome ‘carro’
+Carro carro1; // Inicializa os valores da estrutura
+strcpy (carro1.modelo, "Xyz"); // Copia o nome ‘xyz’ para o campo 'modelo' de 'carro1'
+carro1.ano = 2020; // Define o ano
+carro1.preco 90000.00; // Define o preço do carro
+
+printf("Dados antes da modificação:\n"); // Imprime os dados
+imprimirCarro(&carro1); // Passa o endereço de 'carro1' para imprimir os dados
+
+modificarPreco (&carro1, 115000.00); // Função que muda o preço para 115000.00
+
+printf("\nDados após a modificação do preço:\n");
+imprimirCarro (&carro1); // Imprime os dados novamente
+return 0; // Retorna zero para finalizar o programa
+}

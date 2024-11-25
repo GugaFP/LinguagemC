@@ -1,0 +1,30 @@
+9. Escreva um algoritmo em C que cria um vetor com valores digitados pelo usuário, faça uma
+função para multiplicar os valores do vetor e imprime o resultado da multiplicação.
+// Guilherme Fellipe - Computação 02BN
+// Ex 9 - Função que calcula o produto dos valores em um array
+#include <stdio.h>
+int multiplicarValores(int valores[ ], int tamanho) {
+int produto = 1; // Inicia o produto como 1
+for (int i = 0; i < tamanho; i++) {
+produto *= valores[i]; // Multiplica cada um dos elementos do array
+}
+return produto;
+}
+
+int main() {
+int n;
+// Solicita ao usuário a quantidade de valores
+printf("Quantos valores deseja inserir? ");
+scanf("%d", &n);
+
+int valores[n];
+for (int i = 0; i < n; i++) {
+printf("Digite o valor %d: ", i + 1);
+
+scanf("%d", &valores[i]);
+}
+// Calcula e exibe o produto dos valores do array
+int produto = multiplicarValores(valores, n);
+printf("Produto dos valores: %d\n", produto);
+return 0;
+}

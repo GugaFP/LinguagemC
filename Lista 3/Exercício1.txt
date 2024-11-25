@@ -1,0 +1,69 @@
+1. Analise o código de programa abaixo, execute em seu computador e comente cada linha,
+explicando o código. Além disso, refaça o código, criando uma função que permite ao usuário
+digitar todos os dados do vetor pessoas[].
+#include <stdio.h> // Inicia com uma biblioteca
+typedef struct { // Define um tipo de dados chamado 'pessoa' usando uma struct
+double peso; // Aqui se atribui o tipo dos dados
+int idade;
+double altura;
+} pessoa;
+// Função que recebe uma variável como parâmetro e depois imprime peso, idade e altura
+void imprimePessoa (pessoa p) {
+printf("Peso: %lf. Idade: %d. Altura: %lf.\n\n", p.peso, p.idade, p.altura);
+}
+// Inicia o main e declara um vetor de 5 elementos do tipo 'pessoa' e uma variável do tipo 'pessoa'
+int main(){
+pessoa pessoas[5], p1;
+// Atribui valores a peso, idade e altura, enviando ao primeiro elemento do vetor
+pessoas [0].peso = 80.6;
+pessoas [0].idade = 40;
+pessoas [0].altura = 1.70;
+p1 = pessoas [0]; // Passa o conteúdo do vetor para o p1
+if (p1.idade > 20) // Se a idade é maior que 20, adiciona 1
+p1.idade++;
+pessoas [1] = pessoas [0]; // Passa o conteúdo do vetor (pessoas[0]) para o pessoas [1]
+// Chama a função para imprimir os dados dos vetores
+imprimePessoa (p1);
+imprimePessoa (pessoas [0]);
+imprimePessoa (pessoas [1]);
+imprimePessoa (pessoas [2]);
+imprimePessoa (pessoas [3]);
+imprimePessoa (pessoas [4]);
+return 0; //Retorna 0 para finalizar
+}
+
+//Próximo código
+
+#include <stdio.h> // Inicia com uma biblioteca
+typedef struct { // Define um tipo de estrutura chamado 'pessoa' usando uma struct
+double peso; ; // Aqui se atribui o tipo dos dados
+int idade;
+double altura;
+} pessoa;
+
+void lePessoa(pessoa *p) { // Função para ler os dados de peso, idade e altura com printf e scanf
+printf("Digite o peso: ");
+scanf("%lf", &p->peso); // Lê o peso da pessoa e armazena no campo 'peso'
+printf("Digite a idade: ");
+scanf("%d", &p->idade); // Lê a idade da pessoa e armazena no campo 'idade'
+printf("Digite a altura: ");
+scanf("%lf", &p->altura); // Lê a altura da pessoa e armazena no campo 'altura'
+}
+// Função que recebe uma variável como parâmetro e depois imprime peso, idade e altura
+void imprimePessoa(pessoa p) {
+printf("Peso: %.2lf. Idade: %d. Altura: %.2lf.\n\n", p.peso, p.idade, p.altura);
+}
+
+int main() { // Inicia o main e declara um vetor de 5 elementos do tipo 'pessoa' e uma variável do tipo 'pessoa'
+pessoa pessoas[5];
+
+for (int i = 0; i < 5; i++) { // Pede ao usuário que insira os dados de cada pessoa
+printf("Pessoa %d:\n", i + 1);
+lePessoa(&pessoas[i]); // Chama a função para ler os dados e armazena no vetor 'pessoas'
+}
+for (int i = 0; i < 5; i++) { // Imprime os dados de todas que foram inseridas de ‘pessoas’
+printf ("Dados da Pessoa %d:\n", i + 1);
+imprimePessoa (pessoas[i]); // Chama a função de imprimir, para imprimir os dados de cada pessoa
+}
+return 0; // Retorna 0 para finalizar
+}

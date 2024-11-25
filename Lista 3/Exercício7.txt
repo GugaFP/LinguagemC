@@ -1,0 +1,35 @@
+7. Crie um vetor em C com valores digitados pelo usuário, crie uma função para encontrar o maior
+valor, imprima no console o maior valor e sua posição no vetor (suponha que não há números
+repetidos no vetor).
+// Guilherme Fellipe - Computação 02BN
+// Ex 7 - Função que encontra a posição do maior valor em um array
+#include <stdio.h>
+int encontrarMaior(int valores[], int tamanho) {
+int maior = valores[0];
+int posicao = 0;
+for (int i = 1; i < tamanho; i++) {
+if (valores[i] > maior) {
+maior = valores[i];
+posicao = i;
+}
+
+}
+return posicao;
+}
+
+int main() {
+int n;
+// Solicita ao usuário a quantidade de valores
+printf("Quantos valores deseja digitar? ");
+scanf("%d", &n);
+
+int valores[n];
+for (int i = 0; i < n; i++) {
+printf("Digite o valor %d: ", i + 1);
+scanf("%d", &valores[i]);
+}
+// Encontra e exibe o maior valor e sua posição
+int posicaoMaior = encontrarMaior(valores, n);
+printf("Maior valor: %d, Posição: %d\n", valores[posicaoMaior], posicaoMaior);
+return 0;
+}

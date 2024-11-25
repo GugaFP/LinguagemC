@@ -1,0 +1,29 @@
+12. Escreva um algoritmo em C que preencha um vetor de 10 posições com números inteiros
+fornecidos pelo usuário. Após o preenchimento, crie uma função para exibir os números na ordem
+inversa.
+// Guilherme Fellipe - Computação 02BN
+// Ex 12 - Função que exibe os números de um array na ordem inversa
+#include <stdio.h>
+void exibirOrdemInversa(int valores[], int tamanho) {
+for (int i = tamanho - 1; i >= 0; i--) { // Começa do último numero ev ai
+printf("%d ", valores[i]); // até o primeiro
+}
+printf("\n");
+}
+
+int main() {
+int valores[10];
+// Solicita ao usuário que insira 10 numeros
+
+printf("Digite 10 números inteiros:\n");
+for (int i = 0; i < 10; i++) {
+printf("Número %d: ", i + 1);
+scanf("%d", &valores[i]);
+}
+// Exibe os valores na ordem inversa
+
+printf("Números na ordem inversa: ");
+exibirOrdemInversa(valores, 10);
+
+return 0;
+}

@@ -1,0 +1,32 @@
+6. Crie um vetor em C com valores digitados pelo usuário, crie uma (função para somar os valores),
+calcule a média dos valores e imprima o resultado da soma e a média no console.
+// Guilherme Fellipe - Computação 02BN
+// Ex 6 - Função que calcula a soma de um array de inteiros
+#include <stdio.h>
+float somarValores(int valores[], int tamanho) {
+float soma = 0;
+for (int i = 0; i < tamanho; i++) {
+soma += valores[i];
+}
+return soma;
+}
+
+int main() {
+int n;
+// Solicita ao usuário a quantidade de valores
+printf("Quantos valores deseja digitar? ");
+scanf("%d", &n);
+
+int valores[n];
+for (int i = 0; i < n; i++) {
+printf("Digite o valor %d: ", i + 1);
+
+scanf("%d", &valores[i]);
+}
+
+// Calcula a soma e a média dos valores
+float soma = somarValores(valores, n);
+printf("Soma: %.2f\nMédia: %.2f\n", soma, soma / n);
+
+return 0;
+}

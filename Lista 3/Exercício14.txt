@@ -1,0 +1,32 @@
+14. Escreva um programa em C que faz o seguinte:
+Crie um vetor de 10 posições, preencha cada posição com o valores de 1 até 10.
+Some todos os elementos do vetor e armazene o resultado em uma variável.
+Escreva uma função chamada calcularResultado que recebe três parâmetros inteiros: a soma dos
+elementos do vetor, o primeiro valor do vetor, e o último valor do vetor.
+A função deve retornar a seguinte expressão: resultado = soma + (primeiroValor * 5) + (ultimoValor
+* 2).
+No main, imprima o resultado dessa função.
+
+// Guilherme Fellipe - Computação 02BN
+// Ex 14 - Função que calcula o resultado da expressão dada
+#include <stdio.h>
+int calcularResultado(int soma, int primeiroValor, int ultimoValor) {
+return soma + (primeiroValor * 5) + (ultimoValor * 2);
+
+}
+
+int main() {
+int vetor[10];
+int soma = 0;
+// Preenche o vetor com valores de 1 a 10 e calcula a soma de tdos os números
+for (int i = 0; i < 10; i++) {
+vetor[i] = i + 1;
+soma += vetor[i];
+}
+// Chama a função calcularResultado com a soma, o primeiro número e o último
+// número do vetor
+int resultado = calcularResultado(soma, vetor[0], vetor[9]);
+// Exibe o resultado final
+printf("Resultado: %d\n", resultado);
+return 0;
+}

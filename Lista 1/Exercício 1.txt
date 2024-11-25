@@ -1,0 +1,50 @@
+Exercício 1: Pontuação de Jogos: Criar uma matriz para armazenar a pontuação de 3 jogadores em 5 jogos. Preencha a matriz com valores inseridos pelo usuário e exiba a pontuação total de cada jogador e qual o jogador vencedor. 
+Cada linha indica um jogador, cada coluna sua pontuação. 
+Exemplo: //declaração da matriz //Exemplo de Saída 
+int pontos[3][5] = {              Pontuação dos Jogadores 
+(10, 20, 15, 30, 25),             Jogador 1: 100 pontos 
+(20, 30, 25, 40, 35),             Jogador 2: 150 pontos 
+(15, 25, 20, 30, 25)              Jogador 3: 115 pontos 
+Vencedor: Jogador 2 
+};
+
+
+//Guilherme Fellipe 02BN CC
+
+#include <stdio.h>
+
+int main() {
+    int pontos[3][5]; // Matriz para armazenar as pontuações
+    int total[3] = {0, 0, 0}; // Array para somar as pontuações de cada jogador
+    int vencedor = 0; // Índice do jogador vencedor
+    int maiorPontuacao = 0; // Para armazenar a maior pontuação
+
+    // Entrada de dados: preenchendo a matriz
+    printf("Digite as pontuações dos jogadores (3 jogadores, 5 jogos):\n");
+    for (int i = 0; i < 3; i++) {
+        printf("Jogador %d:\n", i + 1);
+        for (int j = 0; j < 5; j++) {
+            printf("Jogo %d: ", j + 1);
+            scanf("%d", &pontos[i][j]);
+            total[i] += pontos[i][j]; // Somando a pontuação total do jogador
+        }
+    }
+
+    // Determinar o vencedor
+    for (int i = 0; i < 3; i++) {
+        if (total[i] > maiorPontuacao) {
+            maiorPontuacao = total[i];
+            vencedor = i + 1; // Jogador é 1-indexado
+        }
+    }
+
+    // Saída: pontuações e vencedor
+    printf("\nPontuação dos Jogadores:\n");
+    for (int i = 0; i < 3; i++) {
+        printf("Jogador %d: %d pontos\n", i + 1, total[i]);
+    }
+    printf("Vencedor: Jogador %d\n", vencedor);
+
+    return 0;
+}
+	

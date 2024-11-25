@@ -1,0 +1,30 @@
+3. Analise o código de programa abaixo, execute em seu computador e comente cada linha,
+explicando o código.
+#include <stdio.h> // Inicia com uma biblioteca
+
+int calcularResultado(int v[], int n); // Função que calcula o resultado, depois de analisar um vetor
+
+int main() {
+int vetor[5], i, resultado; // Faz um vetor de 5 espaços, uma variável (i) para iniciar e outra para o resultado
+
+for (i = 0; i < 5; i++) { // Cria se um loop para preencher cada espaço do vetor
+vetor[i] = i * 2; // Cada elemento do vetor recebe o dobro do seu índice (i)
+}
+
+resultado = calcularResultado(vetor, 5);
+// Função para calcular o resultado, ela passa o vetor e seu tamanho/quantidade de espaços
+
+printf("O resultado é: %d\n", resultado); // Imprime com ‘printf’ o resultado
+
+return 0; // Retorna zero para finalizar o programa
+}
+
+int calcularResultado(int v[], int n) { // Função que soma tdos os elementos de um vetor
+
+int i, soma = 0; // Declara um índice chamado ‘i’ e depois inicializa a soma com 0
+
+for (i = 0; i < n; i++) { // Cria se um loop para percoreer cada espaço do vetor
+soma += v[i]; // Soma o valor do elemento atual ao acumulador chamado 'soma'
+}
+return soma; // Retorna o valor que foi acumulado no final
+}
